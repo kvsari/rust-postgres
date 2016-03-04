@@ -71,9 +71,6 @@ use std::time::Duration;
 #[cfg(feature = "unix_socket")]
 use std::path::PathBuf;
 
-// FIXME remove in 0.12
-pub use transaction::Transaction;
-
 use error::{Error, ConnectError, SqlState, DbError};
 use io::{StreamWrapper, NegotiateSsl};
 use message::BackendMessage::*;
@@ -83,6 +80,7 @@ use message::{WriteMessage, ReadMessage};
 use notification::{Notifications, Notification};
 use rows::{Rows, LazyRows};
 use stmt::{Statement, Column};
+use transaction::Transaction;
 use types::{IsNull, Kind, Type, SessionInfo, Oid, Other, WrongType, ToSql, FromSql, Field};
 use url::Url;
 
